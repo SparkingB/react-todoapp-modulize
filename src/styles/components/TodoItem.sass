@@ -1,0 +1,61 @@
+@import "../mixins/mixins"
+
+
+.todoitem-view,
+.todoitem-edit
+  height: calc( ( 600px * 0.95 - 200px ) / 8 )
+  border-bottom: 1px solid #CCC
+  background: rgba(94, 96, 165, 0.4)
+
+.todoitem-view
+  input
+    display: none
+  div
+    +size(20px,20px)
+    border: 1px solid #FFF
+    background-color: #FFF
+    position: absolute
+    left: 10px
+    top: 8px
+  input:checked + div::after
+    content: " ✓"
+    text-align: center
+    line-height: 20px
+    font-size: 20px
+  >
+    #title
+      position: absolute
+      top: 40%
+      left: 50px
+      transform: translate(0%, -50%)
+
+      color: white
+      width: 145px
+      font-size: 18px
+
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+
+    #date
+      position: absolute
+      top: 75%
+      left: 50px
+      transform: translate(0%, -50%)
+
+      color: #BBB
+      font-size: 12px
+
+    button
+      +size(40px,20px)
+      +verticalCenter
+      &:nth-child(4)
+        right: 10px
+      &:nth-child(5)
+        right: 55px
+
+
+.todoitem-edit > input
+  +size(200px,calc( ( 600px * 0.95 - 200px ) / 10 * 0.6))
+  +center
+  font-size: 18px
