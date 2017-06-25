@@ -7,7 +7,9 @@
     "concurrently": "^3.5.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.0"
   },
   "devDependencies": {
     "autoprefixer": "7.1.0",
@@ -52,7 +54,7 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "install-all":" npm i && cd server && npm i ",
+    "install-all": " npm i && cd server && npm i ",
     "build-css": "node-sass-chokidar -o src/styles/ src/styles/index.sass",
     "watch-css": "npm run build-css && onchange 'src/styles/**/*.sass' -- npm run build-css",
     "start-js": "concurrently 'cd server && npm start' 'node scripts/start.js'",
